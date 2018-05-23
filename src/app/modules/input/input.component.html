@@ -1,3 +1,16 @@
 <div>
   <ng-content></ng-content>
+  <div class="boxHolder">
+    <input
+      [(ngModel)]="search_text"
+      class="inputBox"
+      autofocus
+    />
+    <img
+      (click)="triggerMike()"
+      class="mikeIcon"
+      src="assets/mike.png"
+    />
+    <div class="spinner" *ngIf="blink"></div>
+  </div>
 </div>

@@ -1,0 +1,45 @@
+@keyframes spin {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+.spinner {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 8px;
+  right: 58px;
+  border-radius: 100%;
+  background-color: red;
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.inputBox {
+  height: 35px;
+  line-height: 25px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #d8d8d8;
+  display: inline-block;
+  width: 95%;
+  font-size: 1rem;
+}
+
+.boxHolder {
+  position: relative;
+}
+
+.mikeIcon {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  width: 20px;
+  height: 20px;
+}

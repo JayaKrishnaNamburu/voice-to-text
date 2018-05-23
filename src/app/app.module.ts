@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { InputModule } from './modules/input/input.module';
-
 import { AppComponent } from './app.component';
 
 
@@ -11,7 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    InputModule
+    InputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
