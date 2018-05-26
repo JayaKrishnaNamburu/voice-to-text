@@ -1,16 +1,23 @@
 <div>
   <ng-content></ng-content>
-  <div class="boxHolder">
+  <div
+    class="boxHolder"
+  >
     <input
+      *ngIf="showInput"
       [(ngModel)]="search_text"
       class="inputBox"
       autofocus
     />
-    <img
-      (click)="triggerMike()"
-      class="mikeIcon"
-      src="assets/mike.png"
-    />
-    <div class="spinner" *ngIf="blink"></div>
+    <div
+      [ngClass]="showInput ? 'indicator' : 'floatingIndicator'"
+    >
+      <img
+        class="mike"
+        (click)="triggerMike()"
+        src="assets/mike.png"
+      />
+      <div class="spinner" *ngIf="blink"></div>
+    </div>
   </div>
 </div>
