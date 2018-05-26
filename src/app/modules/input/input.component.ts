@@ -1,6 +1,6 @@
 import { Component, OnInit, Input,
   Output, EventEmitter } from '@angular/core';
-import { SpeechRecognitionService } from '../../services/speachservice';
+import { SpeechRecognitionService } from '../../services/speechservice';
 
 @Component({
   selector: 'app-input',

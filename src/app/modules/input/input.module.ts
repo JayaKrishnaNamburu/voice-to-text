@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputComponent } from './input.component';
-import { SpeechRecognitionService } from '../../services/speachservice';
+import { SpeechRecognitionService } from '../../services/speechservice';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
