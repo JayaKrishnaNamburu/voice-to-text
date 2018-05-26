@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input,
+  Output, EventEmitter } from '@angular/core';
 import { SpeechRecognitionService } from '../../services/speachservice';
 
 @Component({
@@ -11,6 +12,8 @@ export class InputComponent implements OnInit {
   public search_text = '';
   public blink = false;
   @Output() spokenText = new EventEmitter<string>();
+  @Output() error = new EventEmitter<string>();
+  @Input() showInput = true;
   constructor(
     private speech: SpeechRecognitionService
   ) { }
@@ -24,13 +27,24 @@ export class InputComponent implements OnInit {
     } else {
       this.search_text = '';
       this.blink = true;
-      this.speech.record().subscribe((text) => {
+      this.search();
+    }
+  }
+
+  search(): void {
+    this.speech.record().subscribe((text) => {
         this.search_text = text;
         this.blink = false;
         this.spokenText.emit(this.search_text);
         this.speech.stop();
-      });
-    }
+      },
+      (err) => {
+        this.error.emit('Failed in Fetching');
+        if (err.error === 'no-speech') {
+          this.search();
+        }
+      }
+    );
   }
 
 }
